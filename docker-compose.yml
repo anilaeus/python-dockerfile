@@ -1,0 +1,10 @@
+services:
+  web:
+    build: . # build file in the current directory - Dockerfile -.
+    ports:
+      - "5003:5000"
+    volumes:
+      - .:/app   # "." means its in the root folder and ":" means map it "/app"   to app dir.  so basically our volume will keep in sync with our Dockerfile  Workdir  which is /app. Thanks to this if we will change anything in our project it will auto-reload our docker app and sync the changes.
+
+
+# docker compose up  -> it will  build our image -> it will run it.
