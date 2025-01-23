@@ -4,7 +4,9 @@ EXPOSE 5000
 
 WORKDIR /app
 
-RUN pip install flask
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
 
 COPY . .
 
@@ -12,4 +14,4 @@ CMD ["flask", "run", "--host", "0.0.0.0"]
 
 # docker build -t  flask-rest-api .
 
-# docker run -p 5003:5002 flask-rest-api
+# docker run -dp 5005:5000 flask-rest-api

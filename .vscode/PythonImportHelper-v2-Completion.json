@@ -1,0 +1,343 @@
+[
+    {
+        "label": "uuid",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uuid",
+        "description": "uuid",
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "abort",
+        "importPath": "flask_smorest",
+        "description": "flask_smorest",
+        "isExtraImport": true,
+        "detail": "flask_smorest",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask_smorest",
+        "description": "flask_smorest",
+        "isExtraImport": true,
+        "detail": "flask_smorest",
+        "documentation": {}
+    },
+    {
+        "label": "abort",
+        "importPath": "flask_smorest",
+        "description": "flask_smorest",
+        "isExtraImport": true,
+        "detail": "flask_smorest",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask_smorest",
+        "description": "flask_smorest",
+        "isExtraImport": true,
+        "detail": "flask_smorest",
+        "documentation": {}
+    },
+    {
+        "label": "Api",
+        "importPath": "flask_smorest",
+        "description": "flask_smorest",
+        "isExtraImport": true,
+        "detail": "flask_smorest",
+        "documentation": {}
+    },
+    {
+        "label": "MethodView",
+        "importPath": "flask.views",
+        "description": "flask.views",
+        "isExtraImport": true,
+        "detail": "flask.views",
+        "documentation": {}
+    },
+    {
+        "label": "MethodView",
+        "importPath": "flask.views",
+        "description": "flask.views",
+        "isExtraImport": true,
+        "detail": "flask.views",
+        "documentation": {}
+    },
+    {
+        "label": "items",
+        "importPath": "db",
+        "description": "db",
+        "isExtraImport": true,
+        "detail": "db",
+        "documentation": {}
+    },
+    {
+        "label": "stores",
+        "importPath": "db",
+        "description": "db",
+        "isExtraImport": true,
+        "detail": "db",
+        "documentation": {}
+    },
+    {
+        "label": "stores",
+        "importPath": "db",
+        "description": "db",
+        "isExtraImport": true,
+        "detail": "db",
+        "documentation": {}
+    },
+    {
+        "label": "ItemSchema",
+        "importPath": "schema",
+        "description": "schema",
+        "isExtraImport": true,
+        "detail": "schema",
+        "documentation": {}
+    },
+    {
+        "label": "ItemUpdateSchema",
+        "importPath": "schema",
+        "description": "schema",
+        "isExtraImport": true,
+        "detail": "schema",
+        "documentation": {}
+    },
+    {
+        "label": "StoreSchema",
+        "importPath": "schema",
+        "description": "schema",
+        "isExtraImport": true,
+        "detail": "schema",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "blp",
+        "importPath": "resources.item",
+        "description": "resources.item",
+        "isExtraImport": true,
+        "detail": "resources.item",
+        "documentation": {}
+    },
+    {
+        "label": "blp",
+        "importPath": "resources.store",
+        "description": "resources.store",
+        "isExtraImport": true,
+        "detail": "resources.store",
+        "documentation": {}
+    },
+    {
+        "label": "Schema",
+        "importPath": "marshmallow",
+        "description": "marshmallow",
+        "isExtraImport": true,
+        "detail": "marshmallow",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "marshmallow",
+        "description": "marshmallow",
+        "isExtraImport": true,
+        "detail": "marshmallow",
+        "documentation": {}
+    },
+    {
+        "label": "Item",
+        "kind": 6,
+        "importPath": "resources.item",
+        "description": "resources.item",
+        "peekOfCode": "class Item(MethodView):\n    @blp.response(200, ItemSchema)\n    def get(self, item_id):\n        try:\n            return items[item_id]\n        except KeyError:\n            abort(404, \"No such item found\")\n    def delete(self, item_id):\n        try:\n            del items[item_id]",
+        "detail": "resources.item",
+        "documentation": {}
+    },
+    {
+        "label": "Item",
+        "kind": 6,
+        "importPath": "resources.item",
+        "description": "resources.item",
+        "peekOfCode": "class Item(MethodView):\n    @blp.response(200, ItemSchema(many=True))\n    def get(self):\n        return {\n            \"items\": items.values()\n        }  # since we specify many=True it will automatically be list so we don't need to convert it to list anymore.\n    @blp.arguments(ItemSchema)\n    @blp.response(201, ItemSchema)\n    def post(\n        self, item_data",
+        "detail": "resources.item",
+        "documentation": {}
+    },
+    {
+        "label": "blp",
+        "kind": 5,
+        "importPath": "resources.item",
+        "description": "resources.item",
+        "peekOfCode": "blp = Blueprint(\"items\", __name__, description=\"Operations on Items\")\n@blp.route(\"/item/<string:item_id>\")\nclass Item(MethodView):\n    @blp.response(200, ItemSchema)\n    def get(self, item_id):\n        try:\n            return items[item_id]\n        except KeyError:\n            abort(404, \"No such item found\")\n    def delete(self, item_id):",
+        "detail": "resources.item",
+        "documentation": {}
+    },
+    {
+        "label": "Store",
+        "kind": 6,
+        "importPath": "resources.store",
+        "description": "resources.store",
+        "peekOfCode": "class Store(MethodView):\n    @blp.response(200, StoreSchema)\n    def get(self, store_id):\n        try:\n            return stores[store_id]\n        except KeyError:\n            abort(404, message=\"No such store\")\n    def delete(self, store_id):\n        try:\n            del stores[store_id]",
+        "detail": "resources.store",
+        "documentation": {}
+    },
+    {
+        "label": "Store",
+        "kind": 6,
+        "importPath": "resources.store",
+        "description": "resources.store",
+        "peekOfCode": "class Store(MethodView):\n    @blp.response(200, StoreSchema)\n    def get(self):\n        return stores.values()\n    @blp.arguments(StoreSchema)\n    @blp.response(200, StoreSchema)\n    def post(self, store_data):\n        for store in stores:\n            if store[\"name\"] == store_data[\"name\"]:\n                abort(400, \"Store already exists\")",
+        "detail": "resources.store",
+        "documentation": {}
+    },
+    {
+        "label": "blp",
+        "kind": 5,
+        "importPath": "resources.store",
+        "description": "resources.store",
+        "peekOfCode": "blp = Blueprint(\"stores\", __name__, description=\"Operations on Stores\")\n@blp.route(\"/store/<string:store_id>\")\nclass Store(MethodView):\n    @blp.response(200, StoreSchema)\n    def get(self, store_id):\n        try:\n            return stores[store_id]\n        except KeyError:\n            abort(404, message=\"No such store\")\n    def delete(self, store_id):",
+        "detail": "resources.store",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app = Flask(__name__)\napp.config[\"PROPAGATE_EXCEPTION\"] = (\n    True  # propagate  modules exception that they will arrive to app.py so we can work it here\n)\napp.config[\"API_TITLE\"] = \"Stores REST API\"\napp.config[\"API_VERSION\"] = \"v1\"\napp.config[\"OPENAPI_VERSION\"] = \"3.0.3\"\napp.config[\"OPENAPI_URL_PREFIX\"] = \"/\"\napp.config[\"OPENAPI_SWAGGER_UI_PATH\"] = \"/swagger-ui\"\napp.config[\"OPENAPI_SWAGGER_UI_URL\"] = \"https://cdn.jsdelivr.net/npm/swagger-ui-dist/\"",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app.config[\"PROPAGATE_EXCEPTION\"]",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app.config[\"PROPAGATE_EXCEPTION\"] = (\n    True  # propagate  modules exception that they will arrive to app.py so we can work it here\n)\napp.config[\"API_TITLE\"] = \"Stores REST API\"\napp.config[\"API_VERSION\"] = \"v1\"\napp.config[\"OPENAPI_VERSION\"] = \"3.0.3\"\napp.config[\"OPENAPI_URL_PREFIX\"] = \"/\"\napp.config[\"OPENAPI_SWAGGER_UI_PATH\"] = \"/swagger-ui\"\napp.config[\"OPENAPI_SWAGGER_UI_URL\"] = \"https://cdn.jsdelivr.net/npm/swagger-ui-dist/\"\napi = Api(app)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app.config[\"API_TITLE\"]",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app.config[\"API_TITLE\"] = \"Stores REST API\"\napp.config[\"API_VERSION\"] = \"v1\"\napp.config[\"OPENAPI_VERSION\"] = \"3.0.3\"\napp.config[\"OPENAPI_URL_PREFIX\"] = \"/\"\napp.config[\"OPENAPI_SWAGGER_UI_PATH\"] = \"/swagger-ui\"\napp.config[\"OPENAPI_SWAGGER_UI_URL\"] = \"https://cdn.jsdelivr.net/npm/swagger-ui-dist/\"\napi = Api(app)\napi.register_blueprint(ItemBlueprint)\napi.register_blueprint(StoreBlueprint)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app.config[\"API_VERSION\"]",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app.config[\"API_VERSION\"] = \"v1\"\napp.config[\"OPENAPI_VERSION\"] = \"3.0.3\"\napp.config[\"OPENAPI_URL_PREFIX\"] = \"/\"\napp.config[\"OPENAPI_SWAGGER_UI_PATH\"] = \"/swagger-ui\"\napp.config[\"OPENAPI_SWAGGER_UI_URL\"] = \"https://cdn.jsdelivr.net/npm/swagger-ui-dist/\"\napi = Api(app)\napi.register_blueprint(ItemBlueprint)\napi.register_blueprint(StoreBlueprint)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app.config[\"OPENAPI_VERSION\"]",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app.config[\"OPENAPI_VERSION\"] = \"3.0.3\"\napp.config[\"OPENAPI_URL_PREFIX\"] = \"/\"\napp.config[\"OPENAPI_SWAGGER_UI_PATH\"] = \"/swagger-ui\"\napp.config[\"OPENAPI_SWAGGER_UI_URL\"] = \"https://cdn.jsdelivr.net/npm/swagger-ui-dist/\"\napi = Api(app)\napi.register_blueprint(ItemBlueprint)\napi.register_blueprint(StoreBlueprint)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app.config[\"OPENAPI_URL_PREFIX\"]",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app.config[\"OPENAPI_URL_PREFIX\"] = \"/\"\napp.config[\"OPENAPI_SWAGGER_UI_PATH\"] = \"/swagger-ui\"\napp.config[\"OPENAPI_SWAGGER_UI_URL\"] = \"https://cdn.jsdelivr.net/npm/swagger-ui-dist/\"\napi = Api(app)\napi.register_blueprint(ItemBlueprint)\napi.register_blueprint(StoreBlueprint)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app.config[\"OPENAPI_SWAGGER_UI_PATH\"]",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app.config[\"OPENAPI_SWAGGER_UI_PATH\"] = \"/swagger-ui\"\napp.config[\"OPENAPI_SWAGGER_UI_URL\"] = \"https://cdn.jsdelivr.net/npm/swagger-ui-dist/\"\napi = Api(app)\napi.register_blueprint(ItemBlueprint)\napi.register_blueprint(StoreBlueprint)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app.config[\"OPENAPI_SWAGGER_UI_URL\"]",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app.config[\"OPENAPI_SWAGGER_UI_URL\"] = \"https://cdn.jsdelivr.net/npm/swagger-ui-dist/\"\napi = Api(app)\napi.register_blueprint(ItemBlueprint)\napi.register_blueprint(StoreBlueprint)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "api",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "api = Api(app)\napi.register_blueprint(ItemBlueprint)\napi.register_blueprint(StoreBlueprint)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "stores",
+        "kind": 5,
+        "importPath": "db",
+        "description": "db",
+        "peekOfCode": "stores = {}\nitems = {}",
+        "detail": "db",
+        "documentation": {}
+    },
+    {
+        "label": "items",
+        "kind": 5,
+        "importPath": "db",
+        "description": "db",
+        "peekOfCode": "items = {}",
+        "detail": "db",
+        "documentation": {}
+    },
+    {
+        "label": "ItemSchema",
+        "kind": 6,
+        "importPath": "schema",
+        "description": "schema",
+        "peekOfCode": "class ItemSchema(Schema):\n    id = fields.Str(dump_only=True)\n    name = fields.Str(required=True)\n    price = fields.Float(required=True)\n    store_id = fields.Str(required=True)\nclass ItemUpdateSchema(Schema):\n    name = fields.Str()\n    price = fields.Float()\nclass StoreSchema(Schema):\n    id = fields.Str(dump_only=True)",
+        "detail": "schema",
+        "documentation": {}
+    },
+    {
+        "label": "ItemUpdateSchema",
+        "kind": 6,
+        "importPath": "schema",
+        "description": "schema",
+        "peekOfCode": "class ItemUpdateSchema(Schema):\n    name = fields.Str()\n    price = fields.Float()\nclass StoreSchema(Schema):\n    id = fields.Str(dump_only=True)\n    name = fields.Str(required=True)",
+        "detail": "schema",
+        "documentation": {}
+    },
+    {
+        "label": "StoreSchema",
+        "kind": 6,
+        "importPath": "schema",
+        "description": "schema",
+        "peekOfCode": "class StoreSchema(Schema):\n    id = fields.Str(dump_only=True)\n    name = fields.Str(required=True)",
+        "detail": "schema",
+        "documentation": {}
+    }
+]

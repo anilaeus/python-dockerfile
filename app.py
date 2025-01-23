@@ -1,81 +1,23 @@
-import uuid
-from flask import Flask, request
-from flask_smorest import abort
-from db import stores, items
+from flask import Flask
+from flask_smorest import Api
+from resources.item import blp as ItemBlueprint
+from resources.store import blp as StoreBlueprint
+
 
 app = Flask(__name__)
 
+app.config["PROPAGATE_EXCEPTION"] = (
+    True  # propagate  modules exception that they will arrive to app.py so we can work it here
+)
 
-@app.get("/stores")
-def get_stores():
-    return {"stores": list(stores.values())}
+app.config["API_TITLE"] = "Stores REST API"
+app.config["API_VERSION"] = "v1"
+app.config["OPENAPI_VERSION"] = "3.0.3"
+app.config["OPENAPI_URL_PREFIX"] = "/"
+app.config["OPENAPI_SWAGGER_UI_PATH"] = "/swagger-ui"
+app.config["OPENAPI_SWAGGER_UI_URL"] = "https://cdn.jsdelivr.net/npm/swagger-ui-dist/"
 
+api = Api(app)
 
-@app.post("/stores")
-def create_store():
-    request_data = request.get_json()
-
-    for store in stores:
-        if store["name"] == request_data["name"]:
-            abort(400, "Store already exists")
-    store_id = uuid.uuid4().hex
-    new_store = {**request_data, "id": store_id}
-    stores[store_id] = new_store
-    return new_store, 201
-
-
-@app.post("/item")
-def create_item():
-    item_data = request.get_json()
-    if (
-        "price" not in item_data
-        or "store_id" not in item_data
-        or "name" not in item_data
-        or item_data["store_id"] not in stores
-    ):
-        abort(400, message="price & name & store_id must be send")
-    if item_data["store_id"] not in stores:
-        abort(404, message="Store not found")
-
-    for item in items.values():
-        if (
-            item_data["name"] == item["name"]
-            and item_data["store_id"] == item["store_id"]
-        ):
-            abort(400, "Item already exists for the store")
-
-    item_id = uuid.uuid4().hex
-    item = {**item_data, "id": item_id}
-    items[item_id] = item
-    return item, 201
-
-
-@app.delete("/item/<string:item_id>")
-def delete_item(item_id):
-    try:
-        del items[item_id]
-        return {"message": "Item deleted"}
-    except KeyError:
-        abort(404, message="Item not found")
-
-
-@app.get("/stores/<string:store_id>")
-def get_store(store_id):
-
-    try:
-        return {"store": stores[store_id]}
-    except KeyError:
-        abort(404, message="Store not found")
-
-
-@app.get("/items")
-def get_items():
-    return {"items": list(items.values())}
-
-
-@app.get("/item/<string:item_id>")
-def get_item(item_id):
-    try:
-        return {"item": items[item_id]}
-    except KeyError:
-        abort(404, message="Item not found")
+api.register_blueprint(ItemBlueprint)
+api.register_blueprint(StoreBlueprint)
