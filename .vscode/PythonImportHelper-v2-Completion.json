@@ -56,6 +56,14 @@
         "documentation": {}
     },
     {
+        "label": "db",
+        "importPath": "db",
+        "description": "db",
+        "isExtraImport": true,
+        "detail": "db",
+        "documentation": {}
+    },
+    {
         "label": "SQLAlchemyError",
         "importPath": "sqlalchemy.exc",
         "description": "sqlalchemy.exc",
@@ -201,11 +209,27 @@
         "documentation": {}
     },
     {
+        "label": "TagAndItemSchema",
+        "importPath": "schema",
+        "description": "schema",
+        "isExtraImport": true,
+        "detail": "schema",
+        "documentation": {}
+    },
+    {
         "label": "TagSchema",
         "importPath": "schema",
         "description": "schema",
         "isExtraImport": true,
         "detail": "schema",
+        "documentation": {}
+    },
+    {
+        "label": "ItemModel",
+        "importPath": "models.item",
+        "description": "models.item",
+        "isExtraImport": true,
+        "detail": "models.item",
         "documentation": {}
     },
     {
@@ -249,19 +273,36 @@
         "documentation": {}
     },
     {
-        "label": "StoreModel",
-        "importPath": "models.store",
-        "description": "models.store",
+        "label": "models",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "models.store",
+        "importPath": "models",
+        "description": "models",
+        "detail": "models",
         "documentation": {}
     },
     {
         "label": "TagModel",
-        "importPath": "models.tag",
-        "description": "models.tag",
+        "importPath": "models",
+        "description": "models",
         "isExtraImport": true,
-        "detail": "models.tag",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "StoreModel",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "TagAndItemSchema",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
         "documentation": {}
     },
     {
@@ -286,15 +327,6 @@
         "description": "resources.tag",
         "isExtraImport": true,
         "detail": "resources.tag",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "models",
-        "description": "models",
-        "detail": "models",
         "documentation": {}
     },
     {
@@ -335,8 +367,17 @@
         "kind": 6,
         "importPath": "models.item",
         "description": "models.item",
-        "peekOfCode": "class ItemModel(db.Model):\n    __tablename__ = \"items\"\n    id = db.Column(db.Integer, primary_key=True)\n    name = db.Column(db.String(80), unique=True, nullable=False)\n    price = db.Column(db.Float(precision=2), unique=False, nullable=False)\n    store_id = db.Column(\n        db.Integer, db.ForeignKey(\"stores.id\"), unique=False, nullable=False\n    )\n    store = db.relationship(\"StoreModel\", back_populates=\"items\")",
+        "peekOfCode": "class ItemModel(db.Model):\n    __tablename__ = \"items\"\n    id = db.Column(db.Integer, primary_key=True)\n    name = db.Column(db.String(80), unique=True, nullable=False)\n    price = db.Column(db.Float(precision=2), unique=False, nullable=False)\n    store_id = db.Column(\n        db.Integer, db.ForeignKey(\"stores.id\"), unique=False, nullable=False\n    )\n    store = db.relationship(\"StoreModel\", back_populates=\"items\")\n    tags = db.relationship(",
         "detail": "models.item",
+        "documentation": {}
+    },
+    {
+        "label": "ItemTags",
+        "kind": 6,
+        "importPath": "models.item_tags",
+        "description": "models.item_tags",
+        "peekOfCode": "class ItemTags(db.Model):\n    __tablename__ = \"items_and_tags\"\n    id = db.Column(db.Integer, primary_key=True)\n    item_id = db.Column(db.Integer, db.ForeignKey(\"items.id\"))\n    tag_id = db.Column(db.Integer, db.ForeignKey(\"tags.id\"))",
+        "detail": "models.item_tags",
         "documentation": {}
     },
     {
@@ -353,7 +394,7 @@
         "kind": 6,
         "importPath": "models.tag",
         "description": "models.tag",
-        "peekOfCode": "class TagModel(db.Model):\n    __tablename__ = \"tags\"\n    id = db.Column(db.Integer, primary_key=True)\n    name = db.Column(db.String(80), unique=False, nullable=False)\n    store_id = db.Column(db.String(), db.ForeignKey(\"stores.id\"), nullable=False)\n    store = db.relationship(\"StoreModel\", back_populates=\"tags\")",
+        "peekOfCode": "class TagModel(db.Model):\n    __tablename__ = \"tags\"\n    id = db.Column(db.Integer, primary_key=True)\n    name = db.Column(db.String(80), unique=False, nullable=False)\n    store_id = db.Column(db.String(), db.ForeignKey(\"stores.id\"), nullable=False)\n    store = db.relationship(\"StoreModel\", back_populates=\"tags\")\n    items = db.relationship(\n        \"ItemModel\", back_populates=\"tags\", secondary=\"items_and_tags\"\n    )  # item_tags daki __tablename__ yazılır secondary kısmına",
         "detail": "models.tag",
         "documentation": {}
     },
@@ -421,11 +462,29 @@
         "documentation": {}
     },
     {
+        "label": "LinkTagsToItem",
+        "kind": 6,
+        "importPath": "resources.tag",
+        "description": "resources.tag",
+        "peekOfCode": "class LinkTagsToItem(MethodView):\n    @blp.response(201, TagSchema)\n    def post(self, item_id, tag_id):\n        item = ItemModel.query.get_or_404(item_id)\n        tag = TagModel.query.get_or_404(tag_id)\n        item.tags.append(tag)\n        try:\n            db.session.add(item)\n            db.session.commit()\n        except SQLAlchemyError:",
+        "detail": "resources.tag",
+        "documentation": {}
+    },
+    {
+        "label": "Tag",
+        "kind": 6,
+        "importPath": "resources.tag",
+        "description": "resources.tag",
+        "peekOfCode": "class Tag(MethodView):\n    @blp.response(200, TagSchema)\n    def get(self, tag_id):\n        tag = TagModel.query.get_or_404(tag_id)\n        return tag\n    @blp.response(\n        202,\n        description=\"Deletes a tag if no item is tagged with it.\",\n        example={\"message\": \"Tag deleted\"},\n    )",
+        "detail": "resources.tag",
+        "documentation": {}
+    },
+    {
         "label": "get",
         "kind": 2,
         "importPath": "resources.tag",
         "description": "resources.tag",
-        "peekOfCode": "def get(self, tag_id):\n    tag = TagModel.query.get_or_404(tag_id)\n    return tag",
+        "peekOfCode": "def get(self, tag_id):\n    tag = TagModel.query.get_or_404(tag_id)\n    return tag\n@blp.route(\"/item/<string:item_id>/tag/<string:tag_id>\")\nclass LinkTagsToItem(MethodView):\n    @blp.response(201, TagSchema)\n    def post(self, item_id, tag_id):\n        item = ItemModel.query.get_or_404(item_id)\n        tag = TagModel.query.get_or_404(tag_id)\n        item.tags.append(tag)",
         "detail": "resources.tag",
         "documentation": {}
     },
@@ -488,7 +547,7 @@
         "kind": 6,
         "importPath": "schema",
         "description": "schema",
-        "peekOfCode": "class PlainTagSchema(Schema):\n    id = fields.Int(dump_only=True)\n    name = fields.Str(required=True)\nclass StoreSchema(PlainStoreSchema):\n    items = fields.List(fields.Nested(PlainItemSchema()), dump_only=True)\n    tags = fields.List(fields.Nested(PlainTagSchema()), dump_only=True)\nclass ItemSchema(PlainItemSchema):\n    store_id = fields.Int(required=True, load_only=True)\n    store = fields.Nested(PlainStoreSchema(), dump_only=True)\nclass TagSchema(PlainTagSchema):",
+        "peekOfCode": "class PlainTagSchema(Schema):\n    id = fields.Int(dump_only=True)\n    name = fields.Str(required=True)\nclass StoreSchema(PlainStoreSchema):\n    items = fields.List(fields.Nested(PlainItemSchema()), dump_only=True)\n    tags = fields.List(fields.Nested(PlainTagSchema()), dump_only=True)\nclass ItemSchema(PlainItemSchema):\n    store_id = fields.Int(required=True, load_only=True)\n    store = fields.Nested(PlainStoreSchema(), dump_only=True)\n    tags = fields.List(fields.Nested(PlainTagSchema()), dump_only=True)",
         "detail": "schema",
         "documentation": {}
     },
@@ -497,7 +556,7 @@
         "kind": 6,
         "importPath": "schema",
         "description": "schema",
-        "peekOfCode": "class StoreSchema(PlainStoreSchema):\n    items = fields.List(fields.Nested(PlainItemSchema()), dump_only=True)\n    tags = fields.List(fields.Nested(PlainTagSchema()), dump_only=True)\nclass ItemSchema(PlainItemSchema):\n    store_id = fields.Int(required=True, load_only=True)\n    store = fields.Nested(PlainStoreSchema(), dump_only=True)\nclass TagSchema(PlainTagSchema):\n    store_id = fields.Int(required=True, load_only=True)\n    store = fields.Nested(PlainStoreSchema(), dump_only=True)\n# nested yapıları önlemek için Plain schema yapısı kullanılır",
+        "peekOfCode": "class StoreSchema(PlainStoreSchema):\n    items = fields.List(fields.Nested(PlainItemSchema()), dump_only=True)\n    tags = fields.List(fields.Nested(PlainTagSchema()), dump_only=True)\nclass ItemSchema(PlainItemSchema):\n    store_id = fields.Int(required=True, load_only=True)\n    store = fields.Nested(PlainStoreSchema(), dump_only=True)\n    tags = fields.List(fields.Nested(PlainTagSchema()), dump_only=True)\nclass TagSchema(PlainTagSchema):\n    store_id = fields.Int(required=True, load_only=True)\n    store = fields.Nested(PlainStoreSchema(), dump_only=True)",
         "detail": "schema",
         "documentation": {}
     },
@@ -506,7 +565,7 @@
         "kind": 6,
         "importPath": "schema",
         "description": "schema",
-        "peekOfCode": "class ItemSchema(PlainItemSchema):\n    store_id = fields.Int(required=True, load_only=True)\n    store = fields.Nested(PlainStoreSchema(), dump_only=True)\nclass TagSchema(PlainTagSchema):\n    store_id = fields.Int(required=True, load_only=True)\n    store = fields.Nested(PlainStoreSchema(), dump_only=True)\n# nested yapıları önlemek için Plain schema yapısı kullanılır",
+        "peekOfCode": "class ItemSchema(PlainItemSchema):\n    store_id = fields.Int(required=True, load_only=True)\n    store = fields.Nested(PlainStoreSchema(), dump_only=True)\n    tags = fields.List(fields.Nested(PlainTagSchema()), dump_only=True)\nclass TagSchema(PlainTagSchema):\n    store_id = fields.Int(required=True, load_only=True)\n    store = fields.Nested(PlainStoreSchema(), dump_only=True)\n    items = fields.List(fields.Nested(PlainItemSchema()), dump_only=True)\nclass TagAndItemSchema(Schema):\n    message = fields.Str()",
         "detail": "schema",
         "documentation": {}
     },
@@ -515,7 +574,16 @@
         "kind": 6,
         "importPath": "schema",
         "description": "schema",
-        "peekOfCode": "class TagSchema(PlainTagSchema):\n    store_id = fields.Int(required=True, load_only=True)\n    store = fields.Nested(PlainStoreSchema(), dump_only=True)\n# nested yapıları önlemek için Plain schema yapısı kullanılır",
+        "peekOfCode": "class TagSchema(PlainTagSchema):\n    store_id = fields.Int(required=True, load_only=True)\n    store = fields.Nested(PlainStoreSchema(), dump_only=True)\n    items = fields.List(fields.Nested(PlainItemSchema()), dump_only=True)\nclass TagAndItemSchema(Schema):\n    message = fields.Str()\n    item = fields.Nested(ItemSchema)\n    tag = fields.Nested(TagSchema)\n# nested yapıları önlemek için Plain schema yapısı kullanılır",
+        "detail": "schema",
+        "documentation": {}
+    },
+    {
+        "label": "TagAndItemSchema",
+        "kind": 6,
+        "importPath": "schema",
+        "description": "schema",
+        "peekOfCode": "class TagAndItemSchema(Schema):\n    message = fields.Str()\n    item = fields.Nested(ItemSchema)\n    tag = fields.Nested(TagSchema)\n# nested yapıları önlemek için Plain schema yapısı kullanılır",
         "detail": "schema",
         "documentation": {}
     }
