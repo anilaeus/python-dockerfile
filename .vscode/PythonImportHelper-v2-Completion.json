@@ -1,11 +1,115 @@
 [
     {
+        "label": "db",
+        "importPath": "db",
+        "description": "db",
+        "isExtraImport": true,
+        "detail": "db",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "db",
+        "description": "db",
+        "isExtraImport": true,
+        "detail": "db",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "db",
+        "description": "db",
+        "isExtraImport": true,
+        "detail": "db",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "db",
+        "description": "db",
+        "isExtraImport": true,
+        "detail": "db",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "db",
+        "description": "db",
+        "isExtraImport": true,
+        "detail": "db",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "db",
+        "description": "db",
+        "isExtraImport": true,
+        "detail": "db",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "db",
+        "description": "db",
+        "isExtraImport": true,
+        "detail": "db",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemyError",
+        "importPath": "sqlalchemy.exc",
+        "description": "sqlalchemy.exc",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.exc",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemyError",
+        "importPath": "sqlalchemy.exc",
+        "description": "sqlalchemy.exc",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.exc",
+        "documentation": {}
+    },
+    {
+        "label": "IntegrityError",
+        "importPath": "sqlalchemy.exc",
+        "description": "sqlalchemy.exc",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.exc",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemyError",
+        "importPath": "sqlalchemy.exc",
+        "description": "sqlalchemy.exc",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.exc",
+        "documentation": {}
+    },
+    {
         "label": "uuid",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "uuid",
         "description": "uuid",
         "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "abort",
+        "importPath": "flask_smorest",
+        "description": "flask_smorest",
+        "isExtraImport": true,
+        "detail": "flask_smorest",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask_smorest",
+        "description": "flask_smorest",
+        "isExtraImport": true,
+        "detail": "flask_smorest",
         "documentation": {}
     },
     {
@@ -65,27 +169,11 @@
         "documentation": {}
     },
     {
-        "label": "items",
-        "importPath": "db",
-        "description": "db",
+        "label": "MethodView",
+        "importPath": "flask.views",
+        "description": "flask.views",
         "isExtraImport": true,
-        "detail": "db",
-        "documentation": {}
-    },
-    {
-        "label": "stores",
-        "importPath": "db",
-        "description": "db",
-        "isExtraImport": true,
-        "detail": "db",
-        "documentation": {}
-    },
-    {
-        "label": "stores",
-        "importPath": "db",
-        "description": "db",
-        "isExtraImport": true,
-        "detail": "db",
+        "detail": "flask.views",
         "documentation": {}
     },
     {
@@ -110,6 +198,30 @@
         "description": "schema",
         "isExtraImport": true,
         "detail": "schema",
+        "documentation": {}
+    },
+    {
+        "label": "TagSchema",
+        "importPath": "schema",
+        "description": "schema",
+        "isExtraImport": true,
+        "detail": "schema",
+        "documentation": {}
+    },
+    {
+        "label": "ItemModel",
+        "importPath": "models.item",
+        "description": "models.item",
+        "isExtraImport": true,
+        "detail": "models.item",
+        "documentation": {}
+    },
+    {
+        "label": "ItemModel",
+        "importPath": "models.item",
+        "description": "models.item",
+        "isExtraImport": true,
+        "detail": "models.item",
         "documentation": {}
     },
     {
@@ -129,6 +241,30 @@
         "documentation": {}
     },
     {
+        "label": "StoreModel",
+        "importPath": "models.store",
+        "description": "models.store",
+        "isExtraImport": true,
+        "detail": "models.store",
+        "documentation": {}
+    },
+    {
+        "label": "StoreModel",
+        "importPath": "models.store",
+        "description": "models.store",
+        "isExtraImport": true,
+        "detail": "models.store",
+        "documentation": {}
+    },
+    {
+        "label": "TagModel",
+        "importPath": "models.tag",
+        "description": "models.tag",
+        "isExtraImport": true,
+        "detail": "models.tag",
+        "documentation": {}
+    },
+    {
         "label": "blp",
         "importPath": "resources.item",
         "description": "resources.item",
@@ -142,6 +278,40 @@
         "description": "resources.store",
         "isExtraImport": true,
         "detail": "resources.store",
+        "documentation": {}
+    },
+    {
+        "label": "blp",
+        "importPath": "resources.tag",
+        "description": "resources.tag",
+        "isExtraImport": true,
+        "detail": "resources.tag",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "models",
+        "description": "models",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemy",
+        "importPath": "flask_sqlalchemy",
+        "description": "flask_sqlalchemy",
+        "isExtraImport": true,
+        "detail": "flask_sqlalchemy",
         "documentation": {}
     },
     {
@@ -161,11 +331,38 @@
         "documentation": {}
     },
     {
+        "label": "ItemModel",
+        "kind": 6,
+        "importPath": "models.item",
+        "description": "models.item",
+        "peekOfCode": "class ItemModel(db.Model):\n    __tablename__ = \"items\"\n    id = db.Column(db.Integer, primary_key=True)\n    name = db.Column(db.String(80), unique=True, nullable=False)\n    price = db.Column(db.Float(precision=2), unique=False, nullable=False)\n    store_id = db.Column(\n        db.Integer, db.ForeignKey(\"stores.id\"), unique=False, nullable=False\n    )\n    store = db.relationship(\"StoreModel\", back_populates=\"items\")",
+        "detail": "models.item",
+        "documentation": {}
+    },
+    {
+        "label": "StoreModel",
+        "kind": 6,
+        "importPath": "models.store",
+        "description": "models.store",
+        "peekOfCode": "class StoreModel(db.Model):\n    __tablename__ = \"stores\"\n    id = db.Column(db.Integer, unique=True, primary_key=True)\n    name = db.Column(db.String(100), unique=True, nullable=False)\n    items = db.relationship(\n        \"ItemModel\",\n        back_populates=\"store\",\n        lazy=\"dynamic\",\n        cascade=\"all, delete, delete-orphan\",\n    )",
+        "detail": "models.store",
+        "documentation": {}
+    },
+    {
+        "label": "TagModel",
+        "kind": 6,
+        "importPath": "models.tag",
+        "description": "models.tag",
+        "peekOfCode": "class TagModel(db.Model):\n    __tablename__ = \"tags\"\n    id = db.Column(db.Integer, primary_key=True)\n    name = db.Column(db.String(80), unique=False, nullable=False)\n    store_id = db.Column(db.String(), db.ForeignKey(\"stores.id\"), nullable=False)\n    store = db.relationship(\"StoreModel\", back_populates=\"tags\")",
+        "detail": "models.tag",
+        "documentation": {}
+    },
+    {
         "label": "Item",
         "kind": 6,
         "importPath": "resources.item",
         "description": "resources.item",
-        "peekOfCode": "class Item(MethodView):\n    @blp.response(200, ItemSchema)\n    def get(self, item_id):\n        try:\n            return items[item_id]\n        except KeyError:\n            abort(404, \"No such item found\")\n    def delete(self, item_id):\n        try:\n            del items[item_id]",
+        "peekOfCode": "class Item(MethodView):\n    @blp.response(200, ItemSchema)\n    def get(self, item_id):\n        item = ItemModel.query.get_or_404(item_id)\n        try:\n            return item\n        except KeyError:\n            abort(404, \"No such item found\")\n    def delete(self, item_id):\n        item = ItemModel.query.get_or_404(item_id)",
         "detail": "resources.item",
         "documentation": {}
     },
@@ -174,7 +371,7 @@
         "kind": 6,
         "importPath": "resources.item",
         "description": "resources.item",
-        "peekOfCode": "class Item(MethodView):\n    @blp.response(200, ItemSchema(many=True))\n    def get(self):\n        return {\n            \"items\": items.values()\n        }  # since we specify many=True it will automatically be list so we don't need to convert it to list anymore.\n    @blp.arguments(ItemSchema)\n    @blp.response(201, ItemSchema)\n    def post(\n        self, item_data",
+        "peekOfCode": "class Item(MethodView):\n    @blp.response(200, ItemSchema(many=True))\n    def get(self):\n        items = ItemModel.query.all()\n        return items\n    @blp.arguments(ItemSchema)\n    @blp.response(201, ItemSchema)\n    def post(\n        self, item_data\n    ):  # item data is what we get from ItemSchema validation as json. The json data we send goes through our ItemSchema marshmallow and then gets a valid json. Another benefit of marshmallow is it auto generate the parameters for documenting openai",
         "detail": "resources.item",
         "documentation": {}
     },
@@ -183,7 +380,7 @@
         "kind": 5,
         "importPath": "resources.item",
         "description": "resources.item",
-        "peekOfCode": "blp = Blueprint(\"items\", __name__, description=\"Operations on Items\")\n@blp.route(\"/item/<string:item_id>\")\nclass Item(MethodView):\n    @blp.response(200, ItemSchema)\n    def get(self, item_id):\n        try:\n            return items[item_id]\n        except KeyError:\n            abort(404, \"No such item found\")\n    def delete(self, item_id):",
+        "peekOfCode": "blp = Blueprint(\"items\", __name__, description=\"Operations on Items\")\n@blp.route(\"/item/<string:item_id>\")\nclass Item(MethodView):\n    @blp.response(200, ItemSchema)\n    def get(self, item_id):\n        item = ItemModel.query.get_or_404(item_id)\n        try:\n            return item\n        except KeyError:\n            abort(404, \"No such item found\")",
         "detail": "resources.item",
         "documentation": {}
     },
@@ -192,7 +389,7 @@
         "kind": 6,
         "importPath": "resources.store",
         "description": "resources.store",
-        "peekOfCode": "class Store(MethodView):\n    @blp.response(200, StoreSchema)\n    def get(self, store_id):\n        try:\n            return stores[store_id]\n        except KeyError:\n            abort(404, message=\"No such store\")\n    def delete(self, store_id):\n        try:\n            del stores[store_id]",
+        "peekOfCode": "class Store(MethodView):\n    @blp.response(200, StoreSchema)\n    def get(self, store_id):\n        store = StoreModel.query.get_or_404(store_id)\n        return store\n    def delete(self, store_id):\n        store = StoreModel.query.get_or_404(store_id)\n        db.session.delete(store)\n        db.session.commit()\n        return {\"message\": \"Store deleted\"}",
         "detail": "resources.store",
         "documentation": {}
     },
@@ -201,7 +398,7 @@
         "kind": 6,
         "importPath": "resources.store",
         "description": "resources.store",
-        "peekOfCode": "class Store(MethodView):\n    @blp.response(200, StoreSchema)\n    def get(self):\n        return stores.values()\n    @blp.arguments(StoreSchema)\n    @blp.response(200, StoreSchema)\n    def post(self, store_data):\n        for store in stores:\n            if store[\"name\"] == store_data[\"name\"]:\n                abort(400, \"Store already exists\")",
+        "peekOfCode": "class Store(MethodView):\n    @blp.response(200, StoreSchema)\n    def get(self):\n        stores = StoreModel.query.all()\n        return stores\n    @blp.arguments(StoreSchema)\n    @blp.response(200, StoreSchema)\n    def post(self, store_data):\n        store = StoreModel(**store_data)\n        try:",
         "detail": "resources.store",
         "documentation": {}
     },
@@ -210,115 +407,61 @@
         "kind": 5,
         "importPath": "resources.store",
         "description": "resources.store",
-        "peekOfCode": "blp = Blueprint(\"stores\", __name__, description=\"Operations on Stores\")\n@blp.route(\"/store/<string:store_id>\")\nclass Store(MethodView):\n    @blp.response(200, StoreSchema)\n    def get(self, store_id):\n        try:\n            return stores[store_id]\n        except KeyError:\n            abort(404, message=\"No such store\")\n    def delete(self, store_id):",
+        "peekOfCode": "blp = Blueprint(\"stores\", __name__, description=\"Operations on Stores\")\n@blp.route(\"/store/<string:store_id>\")\nclass Store(MethodView):\n    @blp.response(200, StoreSchema)\n    def get(self, store_id):\n        store = StoreModel.query.get_or_404(store_id)\n        return store\n    def delete(self, store_id):\n        store = StoreModel.query.get_or_404(store_id)\n        db.session.delete(store)",
         "detail": "resources.store",
         "documentation": {}
     },
     {
-        "label": "app",
+        "label": "TagsInStore",
+        "kind": 6,
+        "importPath": "resources.tag",
+        "description": "resources.tag",
+        "peekOfCode": "class TagsInStore(MethodView):\n    @blp.response(200, TagSchema(many=True))\n    def get(self, store_id):\n        store = StoreModel.query.get_or_404(store_id)\n        return store.tags.all()\n    @blp.arguments(TagSchema)\n    @blp.response(201, TagSchema)\n    def post(\n        self, tag_data, store_id\n    ):  # json her zaman pathvariable'dan once load olur",
+        "detail": "resources.tag",
+        "documentation": {}
+    },
+    {
+        "label": "get",
+        "kind": 2,
+        "importPath": "resources.tag",
+        "description": "resources.tag",
+        "peekOfCode": "def get(self, tag_id):\n    tag = TagModel.query.get_or_404(tag_id)\n    return tag",
+        "detail": "resources.tag",
+        "documentation": {}
+    },
+    {
+        "label": "blp",
         "kind": 5,
+        "importPath": "resources.tag",
+        "description": "resources.tag",
+        "peekOfCode": "blp = Blueprint(\"tags\", __name__, description=\"Operations on Tags\")\n@blp.route(\"/tag/<string:store_id>/tag\")\nclass TagsInStore(MethodView):\n    @blp.response(200, TagSchema(many=True))\n    def get(self, store_id):\n        store = StoreModel.query.get_or_404(store_id)\n        return store.tags.all()\n    @blp.arguments(TagSchema)\n    @blp.response(201, TagSchema)\n    def post(",
+        "detail": "resources.tag",
+        "documentation": {}
+    },
+    {
+        "label": "create_app",
+        "kind": 2,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "app = Flask(__name__)\napp.config[\"PROPAGATE_EXCEPTION\"] = (\n    True  # propagate  modules exception that they will arrive to app.py so we can work it here\n)\napp.config[\"API_TITLE\"] = \"Stores REST API\"\napp.config[\"API_VERSION\"] = \"v1\"\napp.config[\"OPENAPI_VERSION\"] = \"3.0.3\"\napp.config[\"OPENAPI_URL_PREFIX\"] = \"/\"\napp.config[\"OPENAPI_SWAGGER_UI_PATH\"] = \"/swagger-ui\"\napp.config[\"OPENAPI_SWAGGER_UI_URL\"] = \"https://cdn.jsdelivr.net/npm/swagger-ui-dist/\"",
+        "peekOfCode": "def create_app(db_url=None):\n    app = Flask(__name__)\n    app.config[\"PROPAGATE_EXCEPTION\"] = (\n        True  # propagate  modules exception that they will arrive to app.py so we can work it here\n    )\n    app.config[\"API_TITLE\"] = \"Stores REST API\"\n    app.config[\"API_VERSION\"] = \"v1\"\n    app.config[\"OPENAPI_VERSION\"] = \"3.0.3\"\n    app.config[\"OPENAPI_URL_PREFIX\"] = \"/\"\n    app.config[\"OPENAPI_SWAGGER_UI_PATH\"] = \"/swagger-ui\"",
         "detail": "app",
         "documentation": {}
     },
     {
-        "label": "app.config[\"PROPAGATE_EXCEPTION\"]",
-        "kind": 5,
-        "importPath": "app",
-        "description": "app",
-        "peekOfCode": "app.config[\"PROPAGATE_EXCEPTION\"] = (\n    True  # propagate  modules exception that they will arrive to app.py so we can work it here\n)\napp.config[\"API_TITLE\"] = \"Stores REST API\"\napp.config[\"API_VERSION\"] = \"v1\"\napp.config[\"OPENAPI_VERSION\"] = \"3.0.3\"\napp.config[\"OPENAPI_URL_PREFIX\"] = \"/\"\napp.config[\"OPENAPI_SWAGGER_UI_PATH\"] = \"/swagger-ui\"\napp.config[\"OPENAPI_SWAGGER_UI_URL\"] = \"https://cdn.jsdelivr.net/npm/swagger-ui-dist/\"\napi = Api(app)",
-        "detail": "app",
-        "documentation": {}
-    },
-    {
-        "label": "app.config[\"API_TITLE\"]",
-        "kind": 5,
-        "importPath": "app",
-        "description": "app",
-        "peekOfCode": "app.config[\"API_TITLE\"] = \"Stores REST API\"\napp.config[\"API_VERSION\"] = \"v1\"\napp.config[\"OPENAPI_VERSION\"] = \"3.0.3\"\napp.config[\"OPENAPI_URL_PREFIX\"] = \"/\"\napp.config[\"OPENAPI_SWAGGER_UI_PATH\"] = \"/swagger-ui\"\napp.config[\"OPENAPI_SWAGGER_UI_URL\"] = \"https://cdn.jsdelivr.net/npm/swagger-ui-dist/\"\napi = Api(app)\napi.register_blueprint(ItemBlueprint)\napi.register_blueprint(StoreBlueprint)",
-        "detail": "app",
-        "documentation": {}
-    },
-    {
-        "label": "app.config[\"API_VERSION\"]",
-        "kind": 5,
-        "importPath": "app",
-        "description": "app",
-        "peekOfCode": "app.config[\"API_VERSION\"] = \"v1\"\napp.config[\"OPENAPI_VERSION\"] = \"3.0.3\"\napp.config[\"OPENAPI_URL_PREFIX\"] = \"/\"\napp.config[\"OPENAPI_SWAGGER_UI_PATH\"] = \"/swagger-ui\"\napp.config[\"OPENAPI_SWAGGER_UI_URL\"] = \"https://cdn.jsdelivr.net/npm/swagger-ui-dist/\"\napi = Api(app)\napi.register_blueprint(ItemBlueprint)\napi.register_blueprint(StoreBlueprint)",
-        "detail": "app",
-        "documentation": {}
-    },
-    {
-        "label": "app.config[\"OPENAPI_VERSION\"]",
-        "kind": 5,
-        "importPath": "app",
-        "description": "app",
-        "peekOfCode": "app.config[\"OPENAPI_VERSION\"] = \"3.0.3\"\napp.config[\"OPENAPI_URL_PREFIX\"] = \"/\"\napp.config[\"OPENAPI_SWAGGER_UI_PATH\"] = \"/swagger-ui\"\napp.config[\"OPENAPI_SWAGGER_UI_URL\"] = \"https://cdn.jsdelivr.net/npm/swagger-ui-dist/\"\napi = Api(app)\napi.register_blueprint(ItemBlueprint)\napi.register_blueprint(StoreBlueprint)",
-        "detail": "app",
-        "documentation": {}
-    },
-    {
-        "label": "app.config[\"OPENAPI_URL_PREFIX\"]",
-        "kind": 5,
-        "importPath": "app",
-        "description": "app",
-        "peekOfCode": "app.config[\"OPENAPI_URL_PREFIX\"] = \"/\"\napp.config[\"OPENAPI_SWAGGER_UI_PATH\"] = \"/swagger-ui\"\napp.config[\"OPENAPI_SWAGGER_UI_URL\"] = \"https://cdn.jsdelivr.net/npm/swagger-ui-dist/\"\napi = Api(app)\napi.register_blueprint(ItemBlueprint)\napi.register_blueprint(StoreBlueprint)",
-        "detail": "app",
-        "documentation": {}
-    },
-    {
-        "label": "app.config[\"OPENAPI_SWAGGER_UI_PATH\"]",
-        "kind": 5,
-        "importPath": "app",
-        "description": "app",
-        "peekOfCode": "app.config[\"OPENAPI_SWAGGER_UI_PATH\"] = \"/swagger-ui\"\napp.config[\"OPENAPI_SWAGGER_UI_URL\"] = \"https://cdn.jsdelivr.net/npm/swagger-ui-dist/\"\napi = Api(app)\napi.register_blueprint(ItemBlueprint)\napi.register_blueprint(StoreBlueprint)",
-        "detail": "app",
-        "documentation": {}
-    },
-    {
-        "label": "app.config[\"OPENAPI_SWAGGER_UI_URL\"]",
-        "kind": 5,
-        "importPath": "app",
-        "description": "app",
-        "peekOfCode": "app.config[\"OPENAPI_SWAGGER_UI_URL\"] = \"https://cdn.jsdelivr.net/npm/swagger-ui-dist/\"\napi = Api(app)\napi.register_blueprint(ItemBlueprint)\napi.register_blueprint(StoreBlueprint)",
-        "detail": "app",
-        "documentation": {}
-    },
-    {
-        "label": "api",
-        "kind": 5,
-        "importPath": "app",
-        "description": "app",
-        "peekOfCode": "api = Api(app)\napi.register_blueprint(ItemBlueprint)\napi.register_blueprint(StoreBlueprint)",
-        "detail": "app",
-        "documentation": {}
-    },
-    {
-        "label": "stores",
+        "label": "db",
         "kind": 5,
         "importPath": "db",
         "description": "db",
-        "peekOfCode": "stores = {}\nitems = {}",
+        "peekOfCode": "db = SQLAlchemy()",
         "detail": "db",
         "documentation": {}
     },
     {
-        "label": "items",
-        "kind": 5,
-        "importPath": "db",
-        "description": "db",
-        "peekOfCode": "items = {}",
-        "detail": "db",
-        "documentation": {}
-    },
-    {
-        "label": "ItemSchema",
+        "label": "PlainItemSchema",
         "kind": 6,
         "importPath": "schema",
         "description": "schema",
-        "peekOfCode": "class ItemSchema(Schema):\n    id = fields.Str(dump_only=True)\n    name = fields.Str(required=True)\n    price = fields.Float(required=True)\n    store_id = fields.Str(required=True)\nclass ItemUpdateSchema(Schema):\n    name = fields.Str()\n    price = fields.Float()\nclass StoreSchema(Schema):\n    id = fields.Str(dump_only=True)",
+        "peekOfCode": "class PlainItemSchema(Schema):\n    id = fields.Int(dump_only=True)\n    name = fields.Str(required=True)\n    price = fields.Float(required=True)\nclass ItemUpdateSchema(Schema):\n    name = fields.Str()\n    price = fields.Float()\n    store_id = fields.Int()\nclass PlainStoreSchema(Schema):\n    id = fields.Int(dump_only=True)",
         "detail": "schema",
         "documentation": {}
     },
@@ -327,7 +470,25 @@
         "kind": 6,
         "importPath": "schema",
         "description": "schema",
-        "peekOfCode": "class ItemUpdateSchema(Schema):\n    name = fields.Str()\n    price = fields.Float()\nclass StoreSchema(Schema):\n    id = fields.Str(dump_only=True)\n    name = fields.Str(required=True)",
+        "peekOfCode": "class ItemUpdateSchema(Schema):\n    name = fields.Str()\n    price = fields.Float()\n    store_id = fields.Int()\nclass PlainStoreSchema(Schema):\n    id = fields.Int(dump_only=True)\n    name = fields.Str(required=True)\nclass PlainTagSchema(Schema):\n    id = fields.Int(dump_only=True)\n    name = fields.Str(required=True)",
+        "detail": "schema",
+        "documentation": {}
+    },
+    {
+        "label": "PlainStoreSchema",
+        "kind": 6,
+        "importPath": "schema",
+        "description": "schema",
+        "peekOfCode": "class PlainStoreSchema(Schema):\n    id = fields.Int(dump_only=True)\n    name = fields.Str(required=True)\nclass PlainTagSchema(Schema):\n    id = fields.Int(dump_only=True)\n    name = fields.Str(required=True)\nclass StoreSchema(PlainStoreSchema):\n    items = fields.List(fields.Nested(PlainItemSchema()), dump_only=True)\n    tags = fields.List(fields.Nested(PlainTagSchema()), dump_only=True)\nclass ItemSchema(PlainItemSchema):",
+        "detail": "schema",
+        "documentation": {}
+    },
+    {
+        "label": "PlainTagSchema",
+        "kind": 6,
+        "importPath": "schema",
+        "description": "schema",
+        "peekOfCode": "class PlainTagSchema(Schema):\n    id = fields.Int(dump_only=True)\n    name = fields.Str(required=True)\nclass StoreSchema(PlainStoreSchema):\n    items = fields.List(fields.Nested(PlainItemSchema()), dump_only=True)\n    tags = fields.List(fields.Nested(PlainTagSchema()), dump_only=True)\nclass ItemSchema(PlainItemSchema):\n    store_id = fields.Int(required=True, load_only=True)\n    store = fields.Nested(PlainStoreSchema(), dump_only=True)\nclass TagSchema(PlainTagSchema):",
         "detail": "schema",
         "documentation": {}
     },
@@ -336,7 +497,25 @@
         "kind": 6,
         "importPath": "schema",
         "description": "schema",
-        "peekOfCode": "class StoreSchema(Schema):\n    id = fields.Str(dump_only=True)\n    name = fields.Str(required=True)",
+        "peekOfCode": "class StoreSchema(PlainStoreSchema):\n    items = fields.List(fields.Nested(PlainItemSchema()), dump_only=True)\n    tags = fields.List(fields.Nested(PlainTagSchema()), dump_only=True)\nclass ItemSchema(PlainItemSchema):\n    store_id = fields.Int(required=True, load_only=True)\n    store = fields.Nested(PlainStoreSchema(), dump_only=True)\nclass TagSchema(PlainTagSchema):\n    store_id = fields.Int(required=True, load_only=True)\n    store = fields.Nested(PlainStoreSchema(), dump_only=True)\n# nested yapıları önlemek için Plain schema yapısı kullanılır",
+        "detail": "schema",
+        "documentation": {}
+    },
+    {
+        "label": "ItemSchema",
+        "kind": 6,
+        "importPath": "schema",
+        "description": "schema",
+        "peekOfCode": "class ItemSchema(PlainItemSchema):\n    store_id = fields.Int(required=True, load_only=True)\n    store = fields.Nested(PlainStoreSchema(), dump_only=True)\nclass TagSchema(PlainTagSchema):\n    store_id = fields.Int(required=True, load_only=True)\n    store = fields.Nested(PlainStoreSchema(), dump_only=True)\n# nested yapıları önlemek için Plain schema yapısı kullanılır",
+        "detail": "schema",
+        "documentation": {}
+    },
+    {
+        "label": "TagSchema",
+        "kind": 6,
+        "importPath": "schema",
+        "description": "schema",
+        "peekOfCode": "class TagSchema(PlainTagSchema):\n    store_id = fields.Int(required=True, load_only=True)\n    store = fields.Nested(PlainStoreSchema(), dump_only=True)\n# nested yapıları önlemek için Plain schema yapısı kullanılır",
         "detail": "schema",
         "documentation": {}
     }
